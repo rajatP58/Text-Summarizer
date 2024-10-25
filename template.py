@@ -1,8 +1,8 @@
 import os 
-import pathlib import Path
+from pathlib import Path
 import logging
 
-logging.basicConfig(Level=logging.INFO,format='[%(asctime)s]:%(message)s:')
+logging.basicConfig(level=logging.INFO,format='[%(asctime)s]:%(message)s:')
 
 
 project_name="TextSummarizer"
@@ -32,7 +32,7 @@ list_of_files=[
     # basic template creation
 
 ]
-for filepath in list_of_files #it means we are looking into this files
+for filepath in list_of_files : #it means we are looking into this files
     filepath=Path(filepath) #it will take a look at operating system because linux requires forward slash whereas windows require forward slash
     # so it basically adjust the path according to library pathlib
     filedir,filename=os.path.split(filepath)
@@ -45,7 +45,7 @@ for filepath in list_of_files #it means we are looking into this files
     if(not os.path.exists(filepath)) or (os.path.getsize(filepath)==0):    # here we are checking the file size if thats 0 create a file
        with open(filepath,'w') as f:
          pass
-        logging.info(f"Creating empty file:{filepath}")
+         logging.info(f"Creating empty file:{filepath}")
 
 
 
